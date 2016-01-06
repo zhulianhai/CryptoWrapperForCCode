@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F5AC7DD-AAD3-424B-969F-3BEC87F2E505}</ProjectGuid>
+    <RootNamespace>CryptoWrapper</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>CryptoWrapper</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>..\build\win\CryptoWrapper\dbin\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>..\build\win\CryptoWrapper\bin\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\;..\include;..\interface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;CRYPTO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CryptoWrapperD.lib</OutputFile>
+    </Lib>
+    <Link>
+      <OutputFile>$(OutDir)CryptoWrapper.dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\;..\include;..\interface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;CRYPTO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CryptoWrapper.dll</OutputFile>
+    </Lib>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CryptoWrapper.cpp" />
+    <ClCompile Include="aes_cbc.c" />
+    <ClCompile Include="aes_cfb.c" />
+    <ClCompile Include="aes_core.c" />
+    <ClCompile Include="aes_ctr.c" />
+    <ClCompile Include="aes_ecb.c" />
+    <ClCompile Include="aes_ige.c" />
+    <ClCompile Include="aes_misc.c" />
+    <ClCompile Include="aes_ofb.c" />
+    <ClCompile Include="aes_wrap.c" />
+    <ClCompile Include="asn1_lib.c" />
+    <ClCompile Include="a_object.c" />
+    <ClCompile Include="bio_lib.c" />
+    <ClCompile Include="bn_asm.c" />
+    <ClCompile Include="bn_lib.c" />
+    <ClCompile Include="bn_print.c" />
+    <ClCompile Include="bn_shift.c" />
+    <ClCompile Include="bn_word.c" />
+    <ClCompile Include="bss_file.c" />
+    <ClCompile Include="buf_str.c" />
+    <ClCompile Include="b_print.c" />
+    <ClCompile Include="cbc128.c" />
+    <ClCompile Include="ccm128.c" />
+    <ClCompile Include="cfb128.c" />
+    <ClCompile Include="cryptlib.c" />
+    <ClCompile Include="ctr128.c" />
+    <ClCompile Include="cts128.c" />
+    <ClCompile Include="err.c" />
+    <ClCompile Include="ex_data.c" />
+    <ClCompile Include="gcm128.c" />
+    <ClCompile Include="lhash.c" />
+    <ClCompile Include="mem.c" />
+    <ClCompile Include="mem_clr.c" />
+    <ClCompile Include="mem_dbg.c" />
+    <ClCompile Include="obj_dat.c" />
+    <ClCompile Include="obj_lib.c" />
+    <ClCompile Include="ofb128.c" />
+    <ClCompile Include="o_init.c" />
+    <ClCompile Include="stack.c" />
+    <ClCompile Include="xts128.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\aes.h" />
+    <ClInclude Include="..\include\asn1.h" />
+    <ClInclude Include="..\include\asn1_mac.h" />
+    <ClInclude Include="..\include\bio.h" />
+    <ClInclude Include="..\include\bio_lcl.h" />
+    <ClInclude Include="..\include\bn.h" />
+    <ClInclude Include="..\include\bn_lcl.h" />
+    <ClInclude Include="..\include\buffer.h" />
+    <ClInclude Include="..\include\cryptlib.h" />
+    <ClInclude Include="..\include\crypto.h" />
+    <ClInclude Include="..\include\err.h" />
+    <ClInclude Include="..\include\evp.h" />
+    <ClInclude Include="..\include\e_os.h" />
+    <ClInclude Include="..\include\e_os2.h" />
+    <ClInclude Include="..\include\lhash.h" />
+    <ClInclude Include="..\include\modes.h" />
+    <ClInclude Include="..\include\modes_lcl.h" />
+    <ClInclude Include="..\include\objects.h" />
+    <ClInclude Include="..\include\obj_dat.h" />
+    <ClInclude Include="..\include\obj_mac.h" />
+    <ClInclude Include="..\include\opensslconf.h" />
+    <ClInclude Include="..\include\opensslv.h" />
+    <ClInclude Include="..\include\ossl_typ.h" />
+    <ClInclude Include="..\include\rand_lcl.h" />
+    <ClInclude Include="..\include\safestack.h" />
+    <ClInclude Include="..\include\stack.h" />
+    <ClInclude Include="..\include\symhacks.h" />
+    <ClInclude Include="..\interface\CryptoWrapperAPI.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

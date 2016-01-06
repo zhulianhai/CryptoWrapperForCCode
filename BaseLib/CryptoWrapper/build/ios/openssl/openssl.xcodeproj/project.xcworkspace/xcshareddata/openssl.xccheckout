@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ADC700FC-A3FC-4B48-BBA7-F6A420D14FFC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>openssl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>77f36b20-dcfc-43ae-ad18-f92af561933b++46</key>
+		<string>https://172.16.2.6/svn/SDKBase/networkgroup/aes</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BaseLib/AES/build/ios/openssl/openssl.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>77f36b20-dcfc-43ae-ad18-f92af561933b++46</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>77f36b20-dcfc-43ae-ad18-f92af561933b++46</key>
+		<string>https://172.16.2.6/svn/SDKBase</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://172.16.2.6/svn/SDKBase/networkgroup/aes/BaseLib/AES/build/ios/openssl/openssl.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>77f36b20-dcfc-43ae-ad18-f92af561933b++46</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>77f36b20-dcfc-43ae-ad18-f92af561933b++46</string>
+			<key>IDESourceControlWCCName</key>
+			<string>aes</string>
+		</dict>
+	</array>
+</dict>
+</plist>

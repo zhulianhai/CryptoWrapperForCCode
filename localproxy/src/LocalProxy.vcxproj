@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D4CFE5E9-76D1-41C8-8CF7-D521B0D92428}</ProjectGuid>
+    <RootNamespace>LocalProxy</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>..\build\dbin\local_proxy\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>..\build\bin\local_proxy\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\include;..\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LOCALPROXY_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LocalProxyD.lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\BaseLib\AES\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\;..\include;..\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;LOCALPROXY_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LocalProxyR.lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\BaseLib\AES\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\BaseThread.cpp" />
+    <ClCompile Include="..\..\common\Buffer.cc" />
+    <ClCompile Include="..\..\common\Common.c" />
+    <ClCompile Include="..\..\common\HttpBase.cc" />
+    <ClCompile Include="..\..\common\NetClient.cpp" />
+    <ClCompile Include="..\..\common\PackDef.cc" />
+    <ClCompile Include="..\..\common\ParsePdu.cc" />
+    <ClCompile Include="..\..\common\TcpNetClient.cpp" />
+    <ClCompile Include="..\..\common\TraceLog.cpp" />
+    <ClCompile Include="..\..\common\UdpNetClient.cpp" />
+    <ClCompile Include="..\..\common\Utils.cpp" />
+    <ClCompile Include="LocalProxyImpl.cpp" />
+    <ClCompile Include="NetTestManager.cpp" />
+    <ClCompile Include="RemoteTransport.cpp" />
+    <ClCompile Include="RtpChannel.cpp" />
+    <ClCompile Include="RtpChannelManager.cpp" />
+    <ClCompile Include="SipRelay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\BaseThread.h" />
+    <ClInclude Include="..\..\common\Buffer.h" />
+    <ClInclude Include="..\..\common\Common.h" />
+    <ClInclude Include="..\..\common\CriticalSection.h" />
+    <ClInclude Include="..\..\common\HttpBase.h" />
+    <ClInclude Include="..\..\common\INetClient.h" />
+    <ClInclude Include="..\..\common\NetClient.h" />
+    <ClInclude Include="..\..\common\NetClientBase.h" />
+    <ClInclude Include="..\..\common\NetCommon.h" />
+    <ClInclude Include="..\..\common\PackDef.h" />
+    <ClInclude Include="..\..\common\ParsePdu.h" />
+    <ClInclude Include="..\..\common\TcpNetClient.h" />
+    <ClInclude Include="..\..\common\TcpParsePdu.h" />
+    <ClInclude Include="..\..\common\TraceLog.h" />
+    <ClInclude Include="..\..\common\TypeDef.h" />
+    <ClInclude Include="..\..\common\UdpNetClient.h" />
+    <ClInclude Include="..\..\common\Utils.h" />
+    <ClInclude Include="..\include\ILocalProxy.h" />
+    <ClInclude Include="..\include\LocalProxyCommon.h" />
+    <ClInclude Include="LocalProxyImpl.h" />
+    <ClInclude Include="NetTestManager.h" />
+    <ClInclude Include="RemoteTransport.h" />
+    <ClInclude Include="RtpChannel.h" />
+    <ClInclude Include="RtpChannelManager.h" />
+    <ClInclude Include="SipRelay.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

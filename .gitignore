@@ -1,0 +1,8 @@
+*.o
+*.a
+*.tags
+tags
+*.out
+libs
+obj
+*.so
