@@ -38,8 +38,8 @@ output:
 return:
 	0：失败，非0:成功
 ********************************************************************************/
-CRYPTO_API int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buffer_len,  unsigned int &pubKey_len, 
-                                           unsigned char* prive_key, const unsigned int prive_buffer_len, unsigned int &privekey_len);
+CRYPTO_API int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buffer_len,  unsigned int *pubKey_len, 
+                                           unsigned char* prive_key, const unsigned int prive_buffer_len, unsigned int *privekey_len);
 
 /********************************************************************************
 description:
@@ -58,8 +58,8 @@ return:
 ********************************************************************************/
 
 CRYPTO_API int EncryptSM2(const unsigned char *public_key,const unsigned int pubKey_len,
-				              const unsigned char *input_data, const size_t &input_length, 
-							  unsigned char *out_data, size_t &output_length);
+				              const unsigned char *input_data, const size_t input_length, 
+							  unsigned char *out_data, size_t *output_length);
 
 /********************************************************************************
 description:
@@ -77,8 +77,8 @@ return:
 	0：成功，非0:失败
 ********************************************************************************/
 CRYPTO_API int DecryptSM2(const unsigned char *prive_key, const unsigned int privekey_len,
-							const unsigned char *input_data, const size_t &input_length, 
-							unsigned char *out_data, size_t &output_length);
+							const unsigned char *input_data, const size_t input_length, 
+							unsigned char *out_data, size_t *output_length);
 
 
 /********************************************************************************
@@ -115,7 +115,7 @@ output:
 return:
 0：加密数据，非0:非加密数据
 ********************************************************************************/
-CRYPTO_API int CheckEncryptedAES(const unsigned char *input_data, const size_t &input_length);
+CRYPTO_API int CheckEncryptedAES(const unsigned char *input_data, const size_t input_length);
 /********************************************************************************
 description:
 检查是否为SM4加密数据
@@ -126,7 +126,7 @@ output:
 return:
 0：加密数据，非0:非加密数据
 ********************************************************************************/
-CRYPTO_API int CheckEncryptedSM4(const unsigned char *input_data, const size_t &input_length);
+CRYPTO_API int CheckEncryptedSM4(const unsigned char *input_data, const size_t input_length);
 
 /********************************************************************************
 description:
@@ -141,7 +141,7 @@ output:
 return:
 	0：成功，非0:失败
 ********************************************************************************/
-CRYPTO_API int EncryptAES(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length);
+CRYPTO_API int EncryptAES(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length);
 
 /********************************************************************************
 description:
@@ -156,7 +156,7 @@ output:
 return:
 	0：成功，非0:失败
 ********************************************************************************/
-CRYPTO_API int DecryptAES(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length);
+CRYPTO_API int DecryptAES(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length);
 
 /********************************************************************************
 description:
@@ -171,7 +171,7 @@ output_length：输出的加密数据长度
 return:
 0：成功，非0:失败
 ********************************************************************************/
-CRYPTO_API int EncryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length);
+CRYPTO_API int EncryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length);
 
 /********************************************************************************
 description:
@@ -186,7 +186,7 @@ output_length：输出的解密数据长度
 return:
 0：成功，非0:失败
 ********************************************************************************/
-CRYPTO_API int DecryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length);
+CRYPTO_API int DecryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length);
 
 /********************************************************************************
 description:

@@ -21,7 +21,7 @@ const int CHECK_ENCRYPTE_KEY_VAULE = 0xF0;
 
 
 
-int CheckEncryptedSM4(const unsigned char *input_data, const size_t &input_length)
+int CheckEncryptedSM4(const unsigned char *input_data, const size_t input_length)
 {
 	if (input_length <= CHECK_ENCRYPTED_SIZE)
 	{
@@ -57,7 +57,7 @@ int CheckEncryptedSM4(const unsigned char *input_data, const size_t &input_lengt
 	return 0;
 }
 
-int CheckEncryptedAES(const unsigned char *input_data, const size_t &input_length)
+int CheckEncryptedAES(const unsigned char *input_data, const size_t input_length)
 {
 	if (input_length <= CHECK_ENCRYPTED_SIZE)
 	{
@@ -91,7 +91,7 @@ int CheckEncryptedAES(const unsigned char *input_data, const size_t &input_lengt
 	return 0;
 }
 
-int EncryptAES(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length)
+int EncryptAES(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length)
 {
 	if (password == NULL || input_data == NULL || out_data == NULL)
 	{
@@ -115,7 +115,7 @@ int EncryptAES(const unsigned char *password, const unsigned char *input_data, c
 	for (int i = 0; i < nBlockSize; i++)
 	{
 		AES_encrypt((input_data + nCurPosition), (out_data + nCurPosition), &nAesKkey);
-		output_length += AES_BLOCK_SIZE;
+		*output_length += AES_BLOCK_SIZE;
 		nCurPosition += AES_BLOCK_SIZE;
 	}
 
@@ -128,19 +128,19 @@ int EncryptAES(const unsigned char *password, const unsigned char *input_data, c
 	}
 
 	AES_encrypt(nTemp, (out_data + nCurPosition), &nAesKkey);
-	output_length += AES_BLOCK_SIZE;
+	*output_length += AES_BLOCK_SIZE;
 	nCurPosition += AES_BLOCK_SIZE;
 
 	//Push the check data
 	memset(out_data + nCurPosition, CHECK_ENCRYPTE_KEY_VAULE, CHECK_ENCRYPTED_SIZE);
 	memset(out_data + nCurPosition, ENCRYPTE_FLAG_AES, 1); //set AES flag
-	output_length += CHECK_ENCRYPTED_SIZE;
+	*output_length += CHECK_ENCRYPTED_SIZE;
 	nCurPosition += CHECK_ENCRYPTED_SIZE;
 
 	return 0;
 }
 
-int DecryptAES(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length)
+int DecryptAES(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length)
 {
 	if (password == NULL || input_data == NULL || out_data == NULL)
 	{
@@ -165,7 +165,7 @@ int DecryptAES(const unsigned char *password, const unsigned char *input_data, c
 		return -1;
 	}
 
-	output_length = 0;
+	*output_length = 0;
 	int nBlockSize = true_data_len / AES_BLOCK_SIZE;
 	int nRemainNum = true_data_len % AES_BLOCK_SIZE;
 	if (nRemainNum > 0)
@@ -178,7 +178,7 @@ int DecryptAES(const unsigned char *password, const unsigned char *input_data, c
 	for (int i = 0; i < nBlockSize; i++)
 	{
 		AES_decrypt((input_data + nCurPosition), (out_data + nCurPosition), &nAesKkey);
-		output_length += AES_BLOCK_SIZE;
+		*output_length += AES_BLOCK_SIZE;
 		nCurPosition += AES_BLOCK_SIZE;
 	}
 
@@ -190,11 +190,11 @@ int DecryptAES(const unsigned char *password, const unsigned char *input_data, c
 	}
 
 	//LogINFO("Decrypt ok!, output_length is %u", output_length);
-	output_length = output_length - nDeleteNum;
+	*output_length = *output_length - nDeleteNum;
 	return 0;
 }
 
-int EncryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length)
+int EncryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length)
 {
 	if (password == NULL || input_data == NULL || out_data == NULL)
 	{
@@ -209,12 +209,12 @@ int EncryptSM4(const unsigned char *password, const unsigned char *input_data, c
 
 	sm4_context ctx;
 	sm4_setkey_enc(&ctx, password);
-	output_length = 0;
+	*output_length = 0;
 
 	if (nBlockSize > 0)
 	{
 		sm4_crypt_ecb(&ctx, 1, (nBlockSize * SM4_BLOCK_SIZE), input_data, out_data);
-		output_length += nBlockSize * SM4_BLOCK_SIZE;
+		*output_length += nBlockSize * SM4_BLOCK_SIZE;
 		nCurPosition += nBlockSize * SM4_BLOCK_SIZE;
 	}
 
@@ -226,15 +226,15 @@ int EncryptSM4(const unsigned char *password, const unsigned char *input_data, c
 		memset(nTemp, (SM4_BLOCK_SIZE - nRemainNum), SM4_BLOCK_SIZE);
 		memcpy(nTemp, (input_data + nCurPosition), nRemainNum);
 	}
-	sm4_crypt_ecb(&ctx, 1, SM4_BLOCK_SIZE, nTemp, out_data + output_length);
-	output_length += SM4_BLOCK_SIZE;
+	sm4_crypt_ecb(&ctx, 1, SM4_BLOCK_SIZE, nTemp, out_data + *output_length);
+	*output_length += SM4_BLOCK_SIZE;
 	nCurPosition += SM4_BLOCK_SIZE;
 
 
 	//Push the check data
 	memset(out_data + nCurPosition, CHECK_ENCRYPTE_KEY_VAULE, CHECK_ENCRYPTED_SIZE);
 	memset(out_data + nCurPosition, ENCRYPTE_FLAG_SM4, 1); //set sm4 flag
-	output_length += CHECK_ENCRYPTED_SIZE;
+	*output_length += CHECK_ENCRYPTED_SIZE;
 	nCurPosition += CHECK_ENCRYPTED_SIZE;
 
 	return 0;
@@ -242,7 +242,7 @@ int EncryptSM4(const unsigned char *password, const unsigned char *input_data, c
 
 
 
-int DecryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length)
+int DecryptSM4(const unsigned char *password, const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length)
 {
 	if (password == NULL || input_data == NULL || out_data == NULL)
 	{
@@ -267,23 +267,23 @@ int DecryptSM4(const unsigned char *password, const unsigned char *input_data, c
 	}
 
 	size_t nCurPosition = 0;
-	output_length = 0;
+	*output_length = 0;
 
 	sm4_context ctx;
 	sm4_setkey_dec(&ctx, password);
 	sm4_crypt_ecb(&ctx, 0, true_data_len, input_data, out_data);
-	output_length = true_data_len;
+	*output_length = true_data_len;
 	nCurPosition = true_data_len;
 
 	unsigned char nDeleteNum = out_data[nCurPosition - 1];
 	if ((int)nDeleteNum > 16)
 	{
-		//printf("Decrypt error! last 16byte > 16\n");
+		printf("Decrypt error! last 16byte > 16\n");
 		return -1;
 	}
 
 	//LogINFO("Decrypt ok!, output_length is %u", output_length);
-	output_length = output_length - nDeleteNum;
+	*output_length = *output_length - nDeleteNum;
 	return 0;
 }
 
@@ -327,8 +327,8 @@ unsigned int CreateSecretKey(unsigned char* buff_password, const unsigned int bu
 
 	return password_len;
 }
-int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buffer_len,  unsigned int &pubKey_len, 
-                                           unsigned char* prive_key, const unsigned int prive_buffer_len, unsigned int &privekey_len)
+int CreateSecretKeySM2(unsigned char* public_key, const int public_buffer_len,   int *pubKey_len, 
+                                           unsigned char* prive_key, const int prive_buffer_len, int *privekey_len)
 {
 	if ((public_key == NULL) || (public_buffer_len < 64))
 	{
@@ -371,7 +371,7 @@ int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buff
 	printf("\npubKey_y_len = %d \n",pubKey_y_len);
 	printf("***************************************************\n");
 
-	pubKey_len = pubKey_x_len + pubKey_y_len;
+	*pubKey_len = pubKey_x_len + pubKey_y_len;
 
 	printf("privkey = ");
 	for(int i=0;i<32;i++)
@@ -380,13 +380,13 @@ int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buff
 		prive_key[i] = privkey[i];
 		printf("%02x",privkey[i]);
 	}
-	privekey_len = privkeylen;
+	*privekey_len = privkeylen;
 	printf("\nprivkeylen = %d \n",privkeylen);
 
 	return 1;
 }
 
-int EncryptSM2(const unsigned char *public_key, const unsigned int pubKey_len,const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length )
+int EncryptSM2(const unsigned char *public_key, const unsigned int pubKey_len,const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length )
 {
 	if (public_key == NULL || input_data == NULL || out_data == NULL)
 	{
@@ -416,13 +416,13 @@ int EncryptSM2(const unsigned char *public_key, const unsigned int pubKey_len,co
 
 	sm2_encrypt((unsigned char *)input_data, input_length, pubKey_x, 32, pubKey_y, 32, out_data);
 
-	output_length = input_length + 64 + 32;
+	*output_length = input_length + 64 + 32;
 
 	return 0;
 
 }
 
-int DecryptSM2(const unsigned char *prive_key, const unsigned int privekey_len,const unsigned char *input_data, const size_t &input_length, unsigned char *out_data, size_t &output_length)
+int DecryptSM2(const unsigned char *prive_key, const unsigned int privekey_len,const unsigned char *input_data, const size_t input_length, unsigned char *out_data, size_t *output_length)
 {
 
 	if (prive_key == NULL || input_data == NULL || out_data == NULL)
@@ -455,7 +455,7 @@ int DecryptSM2(const unsigned char *prive_key, const unsigned int privekey_len,c
 		printf("sm2_decrypt OK!\n");
 	}
 
-	output_length = input_length - 96;
+	*output_length = input_length - 96;
 	return 0;
 }
 
