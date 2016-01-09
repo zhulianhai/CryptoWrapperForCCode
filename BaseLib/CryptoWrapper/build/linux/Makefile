@@ -9,6 +9,7 @@ OBJ_DIR3 := $(CUR_DIR)/obj/CryptoWrapper/src/sm2
 
 $(shell [ -d ${OBJ_DIR} ] || mkdir -p ${OBJ_DIR})
 $(shell [ -d ${OBJ_DIR1} ] || mkdir -p ${OBJ_DIR1})
+$(shell [ -d ${OBJ_DIR2} ] || mkdir -p ${OBJ_DIR2})
 $(shell [ -d ${OBJ_DIR3} ] || mkdir -p ${OBJ_DIR3})
 
 
@@ -21,7 +22,7 @@ CFLAGS := -O2 -fPIC -Wall -DLINUX -DPOSIX -Wunused-variable -fpermissive -Wsign-
 endif
 
 
-CC := g++
+CC := gcc
 
 LOCAL_SRC_AES_FILES :=  \
 		../../src/aes/aes_cbc.c \
@@ -112,7 +113,7 @@ LOCAL_SRC_SM2_FILES := \
  			../../src/sm2/sm3.c
 
  LOCAL_SRC_FILES :=  \
-		../../src/CryptoWrapper.cpp
+		../../src/CryptoWrapper.c
   		
 
 CSRCS := \
@@ -143,6 +144,7 @@ TARGET := libCryptoWrapper.so
 $(TARGET): $(COBJS) $(CCOBJS) $(CPPOBJS)
 	$(CC) -shared -fPIC -Wl,--whole-archive  $^ -Wl,--no-whole-archive -Wl,-soname -Wl,$@ -o $@
 	mv $(TARGET)  ../../lib/
+
 
 $(COBJS):$(OBJ_DIR)/%.o:%.c
 	$(CC) -fPIC -c  $< -o $@ $(INCDIR) $(CFLAGS) 

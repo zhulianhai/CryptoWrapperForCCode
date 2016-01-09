@@ -90,7 +90,7 @@
 
 /*
  * Expanded SM4 S-boxes
- /* Sbox table: 8bits input convert to 8 bits output*/
+ * Sbox table: 8bits input convert to 8 bits output*/
  
 static const unsigned char SboxTable[16][16] = 
 {

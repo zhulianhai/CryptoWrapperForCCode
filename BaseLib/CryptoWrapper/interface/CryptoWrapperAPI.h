@@ -22,6 +22,10 @@
 #endif
 #endif
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 /********************************************************************************
 description:
 	获取 SM2 公钥和秘钥
@@ -38,8 +42,7 @@ output:
 return:
 	0：失败，非0:成功
 ********************************************************************************/
-CRYPTO_API int CreateSecretKeySM2(unsigned char* public_key, const unsigned int public_buffer_len,  unsigned int *pubKey_len, 
-                                           unsigned char* prive_key, const unsigned int prive_buffer_len, unsigned int *privekey_len);
+CRYPTO_API int CreateSecretKeySM2(unsigned char* public_key, const int public_buffer_len,  int *pubKey_len, unsigned char* prive_key, const int prive_buffer_len, int *privekey_len);
 
 /********************************************************************************
 description:
@@ -213,5 +216,8 @@ return:
 ********************************************************************************/
 CRYPTO_API int DecryptFileSM4(const unsigned char *password, FILE * input_file, FILE * output_file);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif		 //AES_SM4_WRAPPER_H						
