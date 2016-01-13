@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\AES\aes.h" />
+    <ClInclude Include="..\include\AES\aes_locl.h" />
+    <ClInclude Include="..\include\AES\asn1.h" />
+    <ClInclude Include="..\include\AES\asn1_mac.h" />
+    <ClInclude Include="..\include\AES\bio.h" />
+    <ClInclude Include="..\include\AES\bio_lcl.h" />
+    <ClInclude Include="..\include\AES\bn.h" />
+    <ClInclude Include="..\include\AES\bn_lcl.h" />
+    <ClInclude Include="..\include\AES\buffer.h" />
+    <ClInclude Include="..\include\AES\cryptlib.h" />
+    <ClInclude Include="..\include\AES\crypto.h" />
+    <ClInclude Include="..\include\AES\err.h" />
+    <ClInclude Include="..\include\AES\evp.h" />
+    <ClInclude Include="..\include\AES\e_os.h" />
+    <ClInclude Include="..\include\AES\e_os2.h" />
+    <ClInclude Include="..\include\AES\lhash.h" />
+    <ClInclude Include="..\include\AES\modes.h" />
+    <ClInclude Include="..\include\AES\modes_lcl.h" />
+    <ClInclude Include="..\include\AES\objects.h" />
+    <ClInclude Include="..\include\AES\obj_dat.h" />
+    <ClInclude Include="..\include\AES\obj_mac.h" />
+    <ClInclude Include="..\include\AES\opensslconf.h" />
+    <ClInclude Include="..\include\AES\opensslv.h" />
+    <ClInclude Include="..\include\AES\ossl_typ.h" />
+    <ClInclude Include="..\include\AES\rand_lcl.h" />
+    <ClInclude Include="..\include\AES\safestack.h" />
+    <ClInclude Include="..\include\AES\stack.h" />
+    <ClInclude Include="..\include\AES\symhacks.h" />
+    <ClInclude Include="..\include\sm2\miracl.h" />
+    <ClInclude Include="..\include\sm2\mirdef.h" />
+    <ClInclude Include="..\include\sm2\sm2.h" />
+    <ClInclude Include="..\include\sm2\sm3.h" />
+    <ClInclude Include="..\include\sm4\sm4.h" />
+    <ClInclude Include="..\interface\CryptoWrapperAPI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aes\aes_cbc.c" />
+    <ClCompile Include="aes\aes_cfb.c" />
+    <ClCompile Include="aes\aes_core.c" />
+    <ClCompile Include="aes\aes_ctr.c" />
+    <ClCompile Include="aes\aes_ecb.c" />
+    <ClCompile Include="aes\aes_ige.c" />
+    <ClCompile Include="aes\aes_misc.c" />
+    <ClCompile Include="aes\aes_ofb.c" />
+    <ClCompile Include="aes\aes_wrap.c" />
+    <ClCompile Include="aes\asn1_lib.c" />
+    <ClCompile Include="aes\a_object.c" />
+    <ClCompile Include="aes\bio_lib.c" />
+    <ClCompile Include="aes\bn_asm.c" />
+    <ClCompile Include="aes\bn_lib.c" />
+    <ClCompile Include="aes\bn_print.c" />
+    <ClCompile Include="aes\bn_shift.c" />
+    <ClCompile Include="aes\bn_word.c" />
+    <ClCompile Include="aes\bss_file.c" />
+    <ClCompile Include="aes\buf_str.c" />
+    <ClCompile Include="aes\b_print.c" />
+    <ClCompile Include="aes\cbc128.c" />
+    <ClCompile Include="aes\ccm128.c" />
+    <ClCompile Include="aes\cfb128.c" />
+    <ClCompile Include="aes\cryptlib.c" />
+    <ClCompile Include="aes\ctr128.c" />
+    <ClCompile Include="aes\cts128.c" />
+    <ClCompile Include="aes\err.c" />
+    <ClCompile Include="aes\ex_data.c" />
+    <ClCompile Include="aes\gcm128.c" />
+    <ClCompile Include="aes\lhash.c" />
+    <ClCompile Include="aes\mem.c" />
+    <ClCompile Include="aes\mem_clr.c" />
+    <ClCompile Include="aes\mem_dbg.c" />
+    <ClCompile Include="aes\obj_dat.c" />
+    <ClCompile Include="aes\obj_lib.c" />
+    <ClCompile Include="aes\ofb128.c" />
+    <ClCompile Include="aes\o_init.c" />
+    <ClCompile Include="aes\stack.c" />
+    <ClCompile Include="aes\xts128.c" />
+    <ClCompile Include="CryptoWrapper.cpp" />
+    <ClCompile Include="sm2\mraes.c" />
+    <ClCompile Include="sm2\mralloc.c" />
+    <ClCompile Include="sm2\mrarth0.c" />
+    <ClCompile Include="sm2\mrarth1.c" />
+    <ClCompile Include="sm2\mrarth2.c" />
+    <ClCompile Include="sm2\mrarth3.c" />
+    <ClCompile Include="sm2\mrbits.c" />
+    <ClCompile Include="sm2\mrbrick.c" />
+    <ClCompile Include="sm2\mrcore.c" />
+    <ClCompile Include="sm2\mrcrt.c" />
+    <ClCompile Include="sm2\mrcurve.c" />
+    <ClCompile Include="sm2\mrebrick.c" />
+    <ClCompile Include="sm2\mrec2m.c" />
+    <ClCompile Include="sm2\mrecn2.c" />
+    <ClCompile Include="sm2\mrfast.c" />
+    <ClCompile Include="sm2\mrgcd.c" />
+    <ClCompile Include="sm2\mrgcm.c" />
+    <ClCompile Include="sm2\mrgf2m.c" />
+    <ClCompile Include="sm2\mrio1.c" />
+    <ClCompile Include="sm2\mrio2.c" />
+    <ClCompile Include="sm2\mrjack.c" />
+    <ClCompile Include="sm2\mrlucas.c" />
+    <ClCompile Include="sm2\mrmonty.c" />
+    <ClCompile Include="sm2\mrpower.c" />
+    <ClCompile Include="sm2\mrprime.c" />
+    <ClCompile Include="sm2\mrrand.c" />
+    <ClCompile Include="sm2\mrscrt.c" />
+    <ClCompile Include="sm2\mrshs.c" />
+    <ClCompile Include="sm2\mrshs256.c" />
+    <ClCompile Include="sm2\mrshs512.c" />
+    <ClCompile Include="sm2\mrsmall.c" />
+    <ClCompile Include="sm2\mrsroot.c" />
+    <ClCompile Include="sm2\mrstrong.c" />
+    <ClCompile Include="sm2\mrxgcd.c" />
+    <ClCompile Include="sm2\mrzzn2.c" />
+    <ClCompile Include="sm2\mrzzn2b.c" />
+    <ClCompile Include="sm2\mrzzn3.c" />
+    <ClCompile Include="sm2\sm2.c" />
+    <ClCompile Include="sm2\sm3.c" />
+    <ClCompile Include="sm4\sm4.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F5AC7DD-AAD3-424B-969F-3BEC87F2E505}</ProjectGuid>
+    <RootNamespace>CryptoWrapper</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>CryptoWrapper</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\2013\$(Configuration)</OutDir>
+    <IntDir>..\build\win\CryptoWrapper\bin\2013</IntDir>
+    <IncludePath>../include/sm4;../include/AES;../include/sm2;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\2013\$(Configuration)/</OutDir>
+    <IntDir>..\build\win\CryptoWrapper\bin\2013/</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\;..\interface;..\include\sm4;..\include\sm2;..\include\AES;..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;CRYPTO_EXPORTS</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CryptoWrapperD.lib</OutputFile>
+    </Lib>
+    <Link>
+      <OutputFile>$(OutDir)CryptoWrapper.dll</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\;..\interface;..\include\sm4;..\include\sm2;..\include\AES;..\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;CRYPTO_EXPORTS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CryptoWrapper.dll</OutputFile>
+    </Lib>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

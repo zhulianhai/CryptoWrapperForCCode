@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{e6a0e5e3-5e72-480e-8cc7-02294334afe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{28e4803f-81c5-4336-991c-41904e354258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\aes">
+      <UniqueIdentifier>{4a8e429d-3e8e-454f-bc00-38e4ccd69bb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sm2">
+      <UniqueIdentifier>{52fae77d-7144-4f41-b6b7-6298d60a9c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\sm4">
+      <UniqueIdentifier>{05784779-515b-454e-bb54-9a0eac6897b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\aes">
+      <UniqueIdentifier>{1cb1cab4-213e-407f-984d-462bbe86235b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sm2">
+      <UniqueIdentifier>{3214f30a-ee1a-4ba1-89d0-5714b35deea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sm4">
+      <UniqueIdentifier>{f3f24382-88ac-4f99-9f94-a6aa639a63a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\AES\aes.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\aes_locl.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\asn1.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\asn1_mac.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\bio.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\bio_lcl.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\bn.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\bn_lcl.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\buffer.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\cryptlib.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\crypto.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\e_os.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\e_os2.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\err.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\evp.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\lhash.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\modes.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\modes_lcl.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\obj_dat.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\obj_mac.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\objects.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\opensslconf.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\opensslv.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\ossl_typ.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\rand_lcl.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\safestack.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\stack.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\AES\symhacks.h">
+      <Filter>include\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sm4\sm4.h">
+      <Filter>include\sm4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sm2\miracl.h">
+      <Filter>include\sm2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sm2\mirdef.h">
+      <Filter>include\sm2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sm2\sm2.h">
+      <Filter>include\sm2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sm2\sm3.h">
+      <Filter>include\sm2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\CryptoWrapperAPI.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aes\a_object.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_cbc.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_cfb.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_core.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_ctr.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_ecb.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_ige.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_misc.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_ofb.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\aes_wrap.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\asn1_lib.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\b_print.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bio_lib.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bn_asm.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bn_lib.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bn_print.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bn_shift.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bn_word.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\bss_file.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\buf_str.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\cbc128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\ccm128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\cfb128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\cryptlib.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\ctr128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\cts128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\err.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\ex_data.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\gcm128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\lhash.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\mem.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\mem_clr.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\mem_dbg.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\o_init.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\obj_dat.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\obj_lib.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\ofb128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\stack.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="aes\xts128.c">
+      <Filter>src\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="sm4\sm4.c">
+      <Filter>src\sm4</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mraes.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mralloc.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrarth0.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrarth1.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrarth2.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrarth3.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrbits.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrbrick.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrcore.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrcrt.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrcurve.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrebrick.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrec2m.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrecn2.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrfast.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrgcd.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrgcm.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrgf2m.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrio1.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrio2.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrjack.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrlucas.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrmonty.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrpower.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrprime.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrrand.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrscrt.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrshs.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrshs256.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrshs512.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrsmall.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrsroot.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrstrong.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrxgcd.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrzzn2.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrzzn2b.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\mrzzn3.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\sm2.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="sm2\sm3.c">
+      <Filter>src\sm2</Filter>
+    </ClCompile>
+    <ClCompile Include="CryptoWrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CryptoWrapper">
+</Property><Property Name="解决方案文件" Value="D:\3.2\network\BaseLib\CryptoWrapper\build\win\CryptoWrapper.sln">
+</Property><Property Name="Date" Value="2016年1月4日">
+</Property><Property Name="Time" Value="13:00">
+</Property></Properties><Event ErrorLevel="2" Project="D:\3.2\network\BaseLib\CryptoWrapper\src\CryptoWrapper.vcxproj" Source="CryptoWrapper" Description="因项目文件已损坏而无法加载该项目。">
+</Event><Event ErrorLevel="2" Project="CryptoWrapper" Source="..\..\src\CryptoWrapper.vcxproj" Description="项目升级失败。">
+</Event><Event ErrorLevel="3" Project="CryptoWrapper" Source="..\..\src\CryptoWrapper.vcxproj" Description="未转换">
+</Event><Event ErrorLevel="0" Project="" Source="CryptoWrapper.sln" Description="解决方案文件不需要转换。">
+</Event><Event ErrorLevel="3" Project="" Source="CryptoWrapper.sln" Description="无需转换">
+</Event></UpgradeLog>
